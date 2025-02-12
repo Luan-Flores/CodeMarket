@@ -23,7 +23,9 @@
                 <a href="Pages/home/index.html"><img src="../../Icons/SetaDireita.png" alt="setaVoltar" style="height: 30px; width: 30px;"> Continuar comprando</a>
             </div>
             <div id="cardProduto">
-                <!-- Importação do cardproduto.html -->
+                <img src="" alt="">
+                <p id="nomeProduto"></p>
+                <p id="precoProduto"></p>
             </div>
             <h2>Compre também</h2>
             <div id="carrossel">
@@ -40,19 +42,27 @@
                 </div>
                 <div class="form-group">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep">
+                    <input type="text" id="cep" maxlength="8" onblur="preencheEndereco(this.value)" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
                 <div class="form-group">
-                    <label for="logradouro">Logradouro</label>
-                    <input type="text" id="logradouro">
+                    <label for="rua">Rua</label>
+                    <input type="text" id="rua">
                 </div>
                 <div class="form-group">
-                    <label for="localidade">Localidade</label>
-                    <input type="text" id="localidade">
+                    <label for="numero">N°</label>
+                    <input type="text" id="numero">
                 </div>
                 <div class="form-group">
-                    <label for="uf">UF</label>
-                    <input type="text" id="uf">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro">
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" onblur="calculaFrete(this.value)">
                 </div>
                 <hr>
                 <div class="resumo">
@@ -64,5 +74,6 @@
             </div>
         </div>
     </section>
+<script src="carrinho.js"></script>
 </body>
 </html>
