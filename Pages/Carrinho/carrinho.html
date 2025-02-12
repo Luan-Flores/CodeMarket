@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>STORE</h1>
+            <nav>
+                <a href="#"><img src="home-icon.png" alt="Home"> Home</a>
+                <a href="#"><img src="favorites-icon.png" alt="Favoritos"> Favoritos</a>
+                <a href="#"><img src="cart-icon.png" alt="Carrinho"> Carrinho</a>
+            </nav>
+        </div>
+    </header>
+    <section id="cardPrincipal">
+        <div id="produto">
+            <div id="backBtn">
+                <a href="Pages/home/index.html"><img src="../../Icons/SetaDireita.png" alt="setaVoltar" style="height: 30px; width: 30px;"> Continuar comprando</a>
+            </div>
+            <div id="cardProduto">
+                <!-- Importação do cardproduto.html -->
+            </div>
+            <h2>Compre também</h2>
+            <div id="carrossel">
+                <!-- Importação do cardproduto.html para o carrossel / Pegar 3 produtos com a mesma categoria
+                    que o produto selecionado 
+                -->
+            </div>
+        </div>
+        <div id="areaPagamento">
+            <div id="endereco">
+                <div class="tabs">
+                    <button class="active">Endereço</button>
+                    <button>Pagamento</button>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep">
+                </div>
+                <div class="form-group">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" id="logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="localidade">Localidade</label>
+                    <input type="text" id="localidade">
+                </div>
+                <div class="form-group">
+                    <label for="uf">UF</label>
+                    <input type="text" id="uf">
+                </div>
+                <hr>
+                <div class="resumo">
+                    <p>Valor do Produto: <span id="valorProduto">R$ 00,00</span></p>
+                    <p>Frete: <span id="frete">R$ 00,00</span></p>
+                    <p class="total">Valor Total: <span id="valorTotal">R$ 00,00</span></p>
+                </div>
+                <button class="finalizar">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

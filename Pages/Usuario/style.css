@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  fieldset {
+    border: 3px solid #19535F;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
