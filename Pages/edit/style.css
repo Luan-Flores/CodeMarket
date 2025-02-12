@@ -42,7 +42,7 @@
 
 .produto:hover{
     transform: scale(1.05);
-    /* filter: blur(1.5px); */
+    filter: blur(1.5px);
 }
 
 #secProduto {
