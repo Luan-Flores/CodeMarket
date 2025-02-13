@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="form-box-login">
-            <form action="">
-                <h1>Login</h1>
-                <div class="input-box">
-                    <input type="text" name="username" id="username" placeholder="Usuário" required>
+        <div class="login-box">
+            <div class="login">
+                <h2>Login</h2>
+                <div class="input">
+                    <input type="text" placeholder="Usuário">
                 </div>
-                <div class="input-box">
-                    <input type="password" name="password" id="password" placeholder="Senha" required>
+                <div class="input">
+                    <input type="password" placeholder="Senha">
                 </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
+                <button class="btn">Login</button>
+            </div>
+        </div>
+        <div class="bemvindo-box">
+            <div class="bemvindo">  
+                <h2>Olá, seja bem vindo!</h2>
+                <p>Não tem uma conta?</p>
+                <button type="button" class="btn-cadastro" id="cadastroBtn">Cadastro</button>
+            </div>
         </div>
     </div>
-    
+    <script src="./login.js"></script>
 </body>
-<script src="./login.js"></script>
 </html>
+

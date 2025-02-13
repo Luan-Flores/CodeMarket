@@ -9,16 +9,16 @@
 <body>
     <div class="container">
         <div class="cadastro-box">
-            <div class="cadastro">
+            <div id="cadastro">
                 <h2>Cadastro</h2>
                 <div class="input">
-                    <input type="text" placeholder="Usuário">
+                    <input type="text" id="username" placeholder="Usuário">
                 </div>
                 <div class="input">
-                    <input type="email" placeholder="Email">
+                    <input type="email" id="email" placeholder="Email">
                 </div>
                 <div class="input">
-                    <input type="password" placeholder="Senha">
+                    <input type="password" id="password" placeholder="Senha">
                 </div>
                 <button class="btn">Cadastrar</button>
             </div>
@@ -27,10 +27,11 @@
             <div class="bemvindo">
                 <h2>Bem-vindo de volta!</h2>
                 <p>Já tem uma conta?</p>
-                <button class="btn-login">Login</button>
+                <button type="button" class="btn-login" id="loginBtn">Login</button>
             </div>
         </div>
     </div>
+    <script src="./cadastro.js"></script>
 </body>
 </html>
 

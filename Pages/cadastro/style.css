@@ -30,7 +30,7 @@ body {
     padding: 40px;
 }
 
-.cadastro {
+#cadastro {
     flex-direction: column;
     display: flex;
     gap: 15px;
