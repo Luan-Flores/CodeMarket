@@ -17,7 +17,7 @@ function carregarProdutos(endpoint) {
     });
 }
 
-const pegarValor = () => {
+function pegarValor() {
     const filtroProdutos = document.getElementById('filtroProdutos');
     const valorFiltro = filtroProdutos.value;
     secProduto.innerHTML = ''
@@ -26,5 +26,12 @@ const pegarValor = () => {
     }
     carregarProdutos(`products/category/${valorFiltro}`)
 }
+
+document.addEventListener('DOMContentLoaded', () => { 
+    const filtroProdutos = document.getElementById('filtroProdutos');
+    const filtrarButton = document.querySelector('button');
+
+    filtrarButton.addEventListener('click', pegarValor);
+});
 
 carregarProdutos("products/")

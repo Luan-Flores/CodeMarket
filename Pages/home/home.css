@@ -1,0 +1,30 @@
+#filtroProdutos {
+    margin: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    appearance: none;
+    background: url("../../Icons/SetaBaixo.png") no-repeat right 10px center;
+    padding-right: 30px;
+}
+  
+#filtroProdutos:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+  
+button {
+    padding: 10px 20px;
+    background-color: #19535F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+button:hover {
+    background-color: #0056b3;
+}
