@@ -46,3 +46,4 @@ const pegarValor = () => {
 }
 
 carregarProdutos("products/")
+

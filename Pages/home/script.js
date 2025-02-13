@@ -1,3 +1,5 @@
+import produtoCard from '../../Components/produtoCard.js';
+
 let secProduto = document.getElementById("secProduto");
 
 // CATEGORIAS ENDPOINTS: electronics, jewelery, men's clothing, women's clothing
@@ -10,23 +12,12 @@ function carregarProdutos(endpoint) {
     .then(res => res.json())
     .then(json => {
         json.forEach(element => {
-            // falta linkar o card para cada produto especifico (facin)
-            const cardProduto = document.createElement('div');
-            cardProduto.classList.add('produto');
-            cardProduto.innerHTML = `
-                <div class="divImgProd">
-                    <img id="imgProduto" src="${element.image}">
-                </div>
-                <p id="nomeProduto">${element.title}</p>
-                <p id="precoProduto">R$ ${element.price}</p>
-            `;
-
-            secProduto.appendChild(cardProduto);
+            secProduto.innerHTML += produtoCard(element);
         });
     });
 }
 
-const pegarValor = () => {
+function pegarValor() {
     const filtroProdutos = document.getElementById('filtroProdutos');
     const valorFiltro = filtroProdutos.value;
     secProduto.innerHTML = ''
@@ -35,5 +26,12 @@ const pegarValor = () => {
     }
     carregarProdutos(`products/category/${valorFiltro}`)
 }
+
+document.addEventListener('DOMContentLoaded', () => { 
+    const filtroProdutos = document.getElementById('filtroProdutos');
+    const filtrarButton = document.querySelector('button');
+
+    filtrarButton.addEventListener('click', pegarValor);
+});
 
 carregarProdutos("products/")
