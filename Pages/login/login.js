@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else alert("Usuário não encontrado.");
         } catch (error) {
             console.error("Erro ao conectar com o servidor:", error);
-            alert("Erro ao conectar com o servidor. Verifique sua conexão.");
+            alert("Usuário não encontrado.");
         }
     });
 });
