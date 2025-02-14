@@ -4,10 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Components/css/header.css">
+    <link rel="stylesheet" href="../../Components/css/editCard.css">
     <link rel="stylesheet" href="../edit/style.css">
+    <!-- <link rel="stylesheet" href="../../Components/css/produtoCard.css"> -->
     <title>CRUD</title>
+    
 </head>
 <body>
+    <header></header>
+    <section class="options">
+        <div class="main-box">
+            <img src="../../Icons\LAPIS.png" alt="img" width="34px" height="34px">
+            <h1>Editar</h1>
+        </div>
+        <div class="del-box">
+            <img src="../../Icons/lixo.png" alt="" width="34px" height="34px">
+            <h1>Remover</h1>
+        </div>
+    </section>
     <select id="filtroProdutos">
         <option value="electronics">Eletrônicos</option>
         <option value="jewelery">Jóias</option>
@@ -20,10 +35,14 @@
         const nego = () => {
             console.log("Não batman ");
         };
-    </script>
+        </script>
 
-    <section id="secProduto" onmouseover="nego()"></section>
-    <script src="../edit/script.js"></script>
+    <section id="secProduto" onmouseover="nego()">
+
+    </section>
+    <script type="module" src="../../Components/header.js" defer></script>
+    <script type="module" src="../../Components/editCard.js" defer></script>
+    <script src="../edit/script.js" type="module" defer></script>
 </body>
 </html>
 
