@@ -69,7 +69,7 @@ cep.addEventListener('blur', function() {
 });
 
 botao.addEventListener('click', () => {
-    window.location.href = `FCSemID/index.html?acao=FC`;
+    window.location.href = `../FCSemID/index.html?acao=FC`;
 });
 
 

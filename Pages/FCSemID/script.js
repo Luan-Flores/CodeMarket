@@ -1,4 +1,4 @@
-import header from '../../../Components/headerComp.js';
+import header from '../../Components/headerComp.js';
 
 const urlParams = new URLSearchParams(window.location.search)
 const acao = urlParams.get('acao')
@@ -21,7 +21,7 @@ function mudaTela(acao){
         btnAcao.innerHTML = "Continuar comprando"
 
         btnAcao.addEventListener('click', () => {
-            window.location.href = `../../home/home.html`;
+            window.location.href = `../home/home.html`;
         });
     }else if(acao == "SI"){
         imgAcao.src = "../../../Icons/CarrinhoVazio.png"
@@ -30,7 +30,7 @@ function mudaTela(acao){
         btnAcao.innerHTML = "Ir as compras!"
 
         btnAcao.addEventListener('click', () => {
-            window.location.href = `../../home/home.html`;
+            window.location.href = `../home/home.html`;
         });
     }
 }
