@@ -5,51 +5,75 @@ body {
     background-color: #f5f5f5;
 }
 
-header {
-    background-color: #0f4c5c;
-    color: white;
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-}
-
-.header-container {
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-#cardPrincipal {
+#mainCard {
     display: flex;
     padding: 20px;
 }
 
-#produto {
+#productSection {
     width: 65%;
     background: white;
     padding: 20px;
     border-radius: 10px 0 0 10px;
     border: 2px solid #19535F;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#backBtn a, h2 {
+#carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+#carouselSecondary {
+    margin-top: auto;
+}
+
+#returnBtn a, h2 {
     text-decoration: none;
     font-size: 30px;
     color: #0f4c5c;
     font-weight: bold;
 }
 
-#areaPagamento {
+#productCard {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    background-color: #d1d1d1; 
+    border-radius: 15px; 
+    padding: 30px;
+    width: 568px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px;
+    margin-bottom: 6rem;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+}
+
+#productImage {
+    width: 90px; 
+    height: 90px;
+    border-radius: 10px;
+    object-fit: fill;
+}
+
+#productName {
+    font-weight: bold;
+    color: #023b43; 
+    flex-grow: 1; 
+}
+
+#productPrice {
+    font-weight: bold;
+    color: #023b43;
+    font-size: 18px;
+}
+
+#paymentArea {
     width: 30%;
     background: #0f4c5c;
     padding: 20px;
@@ -60,7 +84,7 @@ nav a {
     align-items: center;
 }
 
-#endereco {
+#address {
     width: 100%;
 }
 
@@ -103,22 +127,32 @@ input {
     box-sizing: border-box;
 }
 
-hr{
+hr {
     border-width: 3px;
 }
 
-.resumo p {
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.summary p {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
 }
 
-.total {
+#topMargin {
+    margin-top: 3rem;
+}
+
+.totalAmount {
     font-weight: bold;
     color: #00ff00;
 }
 
-.finalizar {
+#completePurchase {
     background: none;
     border: 2px solid white;
     color: white;
@@ -127,4 +161,110 @@ hr{
     border-radius: 25px;
     cursor: pointer;
     font-size: 24px;
+    margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    #mainCard {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    #productSection {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    #paymentArea {
+        width: 100%; 
+        margin-top: 20px;
+        border-radius: 10px; 
+    }
+
+    #productCard {
+        width: 100%; 
+        padding: 15px; 
+        gap: 10px; 
+    }
+
+    #productImage {
+        width: 70px; 
+        height: 70px;
+    }
+
+    #productName {
+        font-size: 16px; 
+    }
+
+    #productPrice {
+        font-size: 16px; 
+    }
+
+    #carousel {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #returnBtn a, h2 {
+        font-size: 24px;
+    }
+
+    .tabs button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    #completePurchase {
+        font-size: 20px; 
+        padding: 8px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    #mainCard {
+        flex-direction: column; 
+    }
+
+    #productSection {
+        width: 100%; 
+    }
+
+    #carousel {
+        flex-direction: column; 
+        gap: 3rem;
+    }
+
+    .tabs button {
+        font-size: 20px; 
+    }
+
+    #productCard {
+        width: 100%; 
+        padding: 20px; 
+        gap: 15px; 
+    }
+
+    #productImage {
+        width: 80px; 
+        height: 80px;
+    }
+
+    #productName {
+        font-size: 18px; 
+    }
+
+    #productPrice {
+        font-size: 18px; 
+    }
+
+    #paymentArea {
+        width: 100%; 
+    }
+
+    #completePurchase {
+        font-size: 22px; 
+        padding: 12px;
+    }
 }

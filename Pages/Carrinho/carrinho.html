@@ -5,75 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="../../Components/css/produtoCard.css">
+    <link rel="stylesheet" href="../../Components/css/header.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>STORE</h1>
-            <nav>
-                <a href="#"><img src="home-icon.png" alt="Home"> Home</a>
-                <a href="#"><img src="favorites-icon.png" alt="Favoritos"> Favoritos</a>
-                <a href="#"><img src="cart-icon.png" alt="Carrinho"> Carrinho</a>
-            </nav>
-        </div>
-    </header>
-    <section id="cardPrincipal">
-        <div id="produto">
-            <div id="backBtn">
-                <a href="Pages/home/index.html"><img src="../../Icons/SetaDireita.png" alt="setaVoltar" style="height: 30px; width: 30px;"> Continuar comprando</a>
+    <header></header>
+    <section id="mainCard">
+        <div id="productSection">
+            <div id="returnBtn">
+                <a href="../home/home.html">
+                    <img src="../../Icons/SetaDireita.png" alt="setaVoltar" style="height: 30px; width: 30px;"> Continuar comprando
+                </a>
             </div>
-            <div id="cardProduto">
-                <img src="" alt="">
-                <p id="nomeProduto"></p>
-                <p id="precoProduto"></p>
+            <div id="productCard">
+                <img src="" alt="" id="productImage">
+                <p id="productName"></p>
+                <p id="productPrice"></p>
             </div>
-            <h2>Compre também</h2>
-            <div id="carrossel">
-                <!-- Importação do cardproduto.html para o carrossel / Pegar 3 produtos com a mesma categoria
-                    que o produto selecionado 
-                -->
+            <div id="carouselSecondary">
+                <h2>Compre também</h2>
+                <div id="carousel"></div>
             </div>
         </div>
-        <div id="areaPagamento">
-            <div id="endereco">
+        <div id="paymentArea">
+            <div id="address">
                 <div class="tabs">
                     <button class="active">Endereço</button>
                     <button>Pagamento</button>
                 </div>
                 <div class="form-group">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep" maxlength="8" onblur="preencheEndereco(this.value)" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <input type="text" id="cep" maxlength="8" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
                 <div class="form-group">
                     <label for="rua">Rua</label>
-                    <input type="text" id="rua">
+                    <input type="text" id="rua" required>
                 </div>
                 <div class="form-group">
                     <label for="numero">N°</label>
-                    <input type="text" id="numero">
+                    <input type="text" id="numero" required>
                 </div>
                 <div class="form-group">
                     <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro">
+                    <input type="text" id="bairro" required>
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade">
+                    <input type="text" id="cidade" required>
                 </div>
                 <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <input type="text" id="estado" onblur="calculaFrete(this.value)">
+                    <label for="estado">Estado(Sigla)</label>
+                    <input type="text" id="estado" maxlength="2" oninput="this.value = this.value.replace(/[0-9]/g, '')" required>
                 </div>
                 <hr>
-                <div class="resumo">
-                    <p>Valor do Produto: <span id="valorProduto">R$ 00,00</span></p>
+                <div class="summary">
+                    <p id="topMargin">Valor do Produto: <span id="valorProduto">R$ 00,00</span></p>
                     <p>Frete: <span id="frete">R$ 00,00</span></p>
-                    <p class="total">Valor Total: <span id="valorTotal">R$ 00,00</span></p>
+                    <p class="totalAmount">Valor Total: <span id="valorTotal">R$ 00,00</span></p>
                 </div>
-                <button class="finalizar">Finalizar Compra</button>
+                <button id="completePurchase">Finalizar Compra</button>
             </div>
         </div>
     </section>
-<script src="carrinho.js"></script>
+    <script type="module" src="carrinho.js" defer></script>
 </body>
 </html>
