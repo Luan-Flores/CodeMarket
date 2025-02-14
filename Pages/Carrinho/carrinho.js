@@ -12,6 +12,7 @@ const distanciaFrete = {
     ES:	1470,
     GO:	935,
     MA:	2730,
+    MS: 0,
     MG:	1320,
     PA:	2710,
     PB:	2950,
@@ -69,7 +70,7 @@ cep.addEventListener('blur', function() {
 });
 
 botao.addEventListener('click', () => {
-    window.location.href = `../FCSemID/index.html?acao=FC`;
+    window.location.href = `FCSemID/index.html?acao=FC`;
 });
 
 
@@ -145,7 +146,8 @@ function preencheEndereco(cep) {
 
 
 function calculaFrete(estadoDestino){
-    let condicao = estadoDestino in distanciaFrete
+    let estadoMaiusculo = estadoDestino.toUpperCase();
+    let condicao = estadoMaiusculo in distanciaFrete
     if(condicao){
         if(estadoDestino !== "MS" || estadoDestino !== "ms"){
             fetch(`https://fakestoreapi.com/products/${idProduto}`)
@@ -154,7 +156,6 @@ function calculaFrete(estadoDestino){
                 if(!data.erro){
                     valorProduto = data.price;
                 } 
-                let estadoMaiusculo = estadoDestino.toUpperCase();
                 let distancia = distanciaFrete[estadoMaiusculo];
                 let valorProduto1 = parseInt(valorProduto)
         
@@ -165,8 +166,7 @@ function calculaFrete(estadoDestino){
                 total.innerHTML = "R$ " + total1
             })
         }
-    }else if(condicao !== null || condicao !== "" && condicao == false){
+    }else if(!(estadoDestino === null || estadoDestino === "")){
         alert("UF escrito errado ou não existe.");
-
     }
 }
