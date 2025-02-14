@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorito</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../Components/css/header.css">
+    <link rel="stylesheet" href="../../Components/css/produtoCard.css">
+    
+    <title>Favoritos</title>
 </head>
 <body>
+    <header></header>
     
+    <main>
+        <div class="filtro-container">
+            <select id="filtroFavoritos">
+                <option value="0">Todos</option>
+                <option value="men's clothing">Roupas Masculinas</option>
+                <option value="women's clothing">Roupas Femininas</option>
+                <option value="jewelery">Joias</option>
+                <option value="electronics">Eletrônicos</option>
+            </select>
+            <button id="filtrarFavoritos">Filtrar Categoria</button>
+
+        <!-- essa divzinha ta aq pq magicamente ela ta formatando perfeitamente meu baguio, ent n mexe nela n -->
+        </div>
+        
+        <section id="secFavoritos" class="favoritos-container"></section>
+    </main>
+    
+    <script type="module" src="script.js"></script>
 </body>
 </html>

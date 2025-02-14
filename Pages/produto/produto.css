@@ -57,6 +57,22 @@ body {
     margin-top: 2rem;
 }
 
+/* ! pedro: css da estrelinha pra favoritar :3 */
+.favorito-icon {
+    font-size: 40px;
+    cursor: pointer;
+    color: #999;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.favorito-ativo {
+    color: #FFD700;
+    transform: scale(1.2); 
+}
+
 /* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     #boxProduto-container {

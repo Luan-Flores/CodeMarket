@@ -1,0 +1,121 @@
+/* Estilos gerais da página de favoritos */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Estilização do filtro de favoritos */
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#filtroFavoritos {
+    margin: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    appearance: none;
+    background: url("../../Icons/SetaBaixo.png") no-repeat right 10px center;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+#filtroFavoritos:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+#filtrarFavoritos {
+    padding: 10px 20px;
+    background-color: #19535F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#filtrarFavoritos:hover {
+    background-color: #0056b3;
+}
+
+/* Estilização da seção de favoritos */
+.favoritos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.produto-card-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.produto-card-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn-remover {
+    padding: 8px 15px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-remover:hover {
+    background-color: #c9302c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .favoritos-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 10px;
+    }
+
+    #filtroFavoritos {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
