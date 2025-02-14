@@ -1,7 +1,7 @@
 const produtoCard = (element) => {
     
     return `
-        <a href="./produto.html?id=${element.id}"
+        <a href="../../Pages/produto/produto.html?id=${element.id}"
             <div class="produto">
                 <div class="divImgProd">
                         <img id="imgProduto" src="${element.image}">

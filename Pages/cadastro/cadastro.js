@@ -1,5 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("cadastro");
+    const btnCadastrar = document.querySelector(".btn");
+
+    btnCadastrar.addEventListener("click", function () {
+        alert("Cadastro realizado com sucesso!");
+    });
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -21,20 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(userData)
             });
 
+            if (!response.ok) {
+                throw new Error("Erro ao cadastrar usuário.");
+            }
+
             const data = await response.json();
             console.log(data);
             alert("Cadastro realizado com sucesso!");
-            window.location.href = "../login/login.html"; // Redireciona para login
+            window.location.href = "../login/login.html";
         } catch (error) {
             console.error("Erro ao cadastrar usuário:", error);
             alert("Erro ao cadastrar usuário. Tente novamente.");
         }
     });
-        
-    // Redireciona para a página de login ao clicar no botão de login
-    document.getElementById('loginBtn').addEventListener('click', function() {
-        window.location.href = '../login/login.html'; // Redireciona para a página de login
-    });
-    
-});
 
+
+    document.getElementById("loginBtn").addEventListener("click", function () {
+        window.location.href = "../login/login.html"; // Redireciona para a página de login
+    });
+});

@@ -1,0 +1,69 @@
+/* Estilos gerais */
+body {
+    font-family: sans-serif; /* Escolha uma fonte para o corpo da página */
+    margin: 0; /* Remove margens padrão do body */
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+}
+
+#boxProduto {
+    max-width: 960px; /* Largura máxima do container do produto */
+    margin: 20px auto; /* Centraliza o container na página */
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para o container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.imgProduto {
+    text-align: center; /* Centraliza a imagem */
+    margin-bottom: 20px;
+}
+
+.imgProduto img {
+    max-width: 400px; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    border: 1px solid #ddd; /* Borda cinza */
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nomeProduto {
+    font-size: 2em; /* Tamanho do título */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descProduto {
+    font-size: 1.2em; /* Tamanho da descrição */
+    margin-bottom: 20px;
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+.priceProd {
+    font-size: 1.5em; /* Tamanho do preço */
+    color: #008000; /* Cor verde para o preço */
+    font-weight: bold;
+}
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    #boxProduto-container {
+        padding: 10px;
+    }
+
+    .imgProduto img {
+        max-width: 100%; /* Imagem ocupa toda a largura em telas menores */
+    }
+
+    .nomeProduto {
+        font-size: 1.5em;
+    }
+
+    .descProduto {
+        font-size: 1em;
+    }
+
+    .priceProd {
+        font-size: 1.2em;
+    }
+}

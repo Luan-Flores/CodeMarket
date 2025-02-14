@@ -9,26 +9,18 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <div class="login">
-                <h2>Login</h2>
-                <div class="input">
-                    <input type="text" placeholder="Usuário">
-                </div>
-                <div class="input">
-                    <input type="password" placeholder="Senha">
-                </div>
-                <button class="btn">Login</button>
+            <h2>Login</h2>
+            <div class="input">
+                <input type="text" id="username" placeholder="Usuário" required>
             </div>
-        </div>
-        <div class="bemvindo-box">
-            <div class="bemvindo">  
-                <h2>Olá, seja bem vindo!</h2>
-                <p>Não tem uma conta?</p>
-                <button type="button" class="btn-cadastro" id="cadastroBtn">Cadastro</button>
+            <div class="input">
+                <input type="password" id="password" placeholder="Senha" required>
             </div>
+            <button id="loginBtn" class="btn">Entrar</button>
+            <p>Não tem uma conta?</p>
+            <button id="cadastroBtn" class="btn">Cadastre-se</button>
         </div>
     </div>
     <script src="./login.js"></script>
 </body>
 </html>
-

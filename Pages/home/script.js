@@ -5,7 +5,7 @@ let secProduto = document.getElementById("secProduto");
 // CATEGORIAS ENDPOINTS: electronics, jewelery, men's clothing, women's clothing
 // ENDPOINT PARA RETORNAR TUDO: products/
 //ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORI
-let endpoint;
+
 
 function carregarProdutos(endpoint) {
     fetch(`https://fakestoreapi.com/${endpoint}`)
