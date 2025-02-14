@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const loginBtn = document.querySelector(".btn");
-    const cadastroBtn = document.getElementById("cadastroBtn");
-
+    const loginBtn = document.getElementById("loginBtn");
+    
     loginBtn.addEventListener("click", async (e) => {
         e.preventDefault();
 
-        const username = document.querySelector(".input input[type='text']").value;
-        const password = document.querySelector(".input input[type='password']").value;
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
 
         if (!username || !password) {
             alert("Preencha todos os campos!");
@@ -14,25 +13,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
+            console.log("🔄 Enviando login...");
+
             const response = await fetch("https://fakestoreapi.com/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password }),
             });
 
+            if (!response.ok) {
+                throw new Error(`Erro HTTP! Status: ${response.status}`);
+            }
+
             const data = await response.json();
+            console.log("✅ Resposta da API (login):", data);
 
             if (data.token) {
                 sessionStorage.setItem("user", username);
+                sessionStorage.setItem("token", data.token);
 
-                // Obtendo o ID do usuário com base no nome de usuário
+                console.log("🔄 Buscando usuário...");
+
+                // Obtendo a lista de usuários para encontrar o ID do usuário logado
                 const usersResponse = await fetch("https://fakestoreapi.com/users");
+                if (!usersResponse.ok) {
+                    throw new Error(`Erro HTTP ao buscar usuários! Status: ${usersResponse.status}`);
+                }
+
                 const users = await usersResponse.json();
+                console.log("✅ Lista de usuários:", users);
 
                 const user = users.find(user => user.username === username);
                 if (user) {
                     sessionStorage.setItem("userId", user.id);
-                    window.location.href = "home.html"; // Redireciona para a página Home
+                    console.log("✅ Usuário encontrado. Redirecionando...");
+                    window.location.href = "../home/home.html";
                 } else {
                     alert("Usuário não encontrado.");
                 }
@@ -41,12 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } catch (error) {
             console.error("Erro ao conectar com o servidor:", error);
-            alert("Erro ao conectar com o servidor.");
+            alert("Erro ao conectar com o servidor. Verifique sua conexão.");
         }
-    });
-
-    // Redireciona para a página de cadastro ao clicar no botão de cadastro
-    cadastroBtn.addEventListener("click", () => {
-        window.location.href = "../cadastro/cadastro.html";
     });
 });
