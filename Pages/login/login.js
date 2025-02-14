@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const loginBtn = document.getElementById("loginBtn");
+document.getElementById("cadastroBtn").addEventListener("click", function() {
+        window.location.href = "../cadastro/cadastro.html"; });
+    
     
     loginBtn.addEventListener("click", async (e) => {
         e.preventDefault();

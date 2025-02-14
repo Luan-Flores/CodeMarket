@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("cadastro");
     const btnCadastrar = document.querySelector(".btn");
 
-    btnCadastrar.addEventListener("click", function () {
-        alert("Cadastro realizado com sucesso!");
-    });
+ 
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
