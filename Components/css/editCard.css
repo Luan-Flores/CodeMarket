@@ -3,24 +3,33 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
-    background-color: #acc1d6;
+    text-decoration: none;
 }
 
 .desc{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 94%;
     height: 35%;
+    margin-left: 16px;
     & .card4{
         position: absolute;
         bottom: 0;
     } & .card3{
         margin-top: 9px;
+        /* position: absolute;
+        bottom: 0; */
     }
 }
+.infoProduto{
+    width: 220px;
+    height: 295px;
+    position: absolute;
+}
 
-#secProduto > .produto {
+.produto {
+    position: relative;
     background-color: #19535F;
     width: 220px;
     height: 295px;
@@ -29,17 +38,49 @@
     padding: 15px;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    transition: transform 0.3s ease; 
+    /* transition: transform 0.3s ease;  */
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     align-items: center;
+    
+    &:hover{
+        & .infoProduto{
+            /* transform: scale(1.05); */
+            filter: blur(1.5px);
+        }
+        & .ctaCardProduto{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            gap: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            width: 192px;
 
-    & #nomeProduto, #precoProduto{
+        } & a{
+            color:  #19535F;
+            font-size: larger;
+            font-weight: bold;
+        }
+    }
+
+    & .nomeProduto, .precoProduto{
         font-family: "Inter", serif;
         font-weight: 600;
         color: #FFF;
         line-height: 18.15px;
         font-size: 15px;
     }
+
+    & .ctaCardProduto{
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        z-index: 999;
+        bottom: 0;
+        opacity: 0;
+    } 
 }
 .options{
     gap: 15px;
@@ -56,14 +97,15 @@
     justify-content: center;
     gap: 12px;
     border-radius: 17px;
-
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-
+    margin-left: 6px;
+    box-shadow: rgb(30 30 30 / 28%) 1px 4px 4px;
+    
     & img, h1 {
         background-color: #FEFFE9;
     }
 }
 .del-box{
+    margin-left: 6px;
     background-color: #FEFFE9;
     width: 180px;
     height: 50px;
@@ -73,7 +115,8 @@
     justify-content: center;
     gap: 12px;
     border-radius: 17px;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgb(30 30 30 / 28%) 1px 4px 4px;
+
 
     & img, h1 {
         background-color: #FEFFE9;
@@ -83,10 +126,7 @@
 .del-box:hover, .main-box:hover{
     transform: scale(1.03);
 }
-.produto:hover{
-    transform: scale(1.05);
-    filter: blur(1.5px);
-}
+
 
 #secProduto {
     display: flex;
@@ -96,6 +136,7 @@
     margin-top: 100px;
     
 }
+
 .divImgProd{
     width: 87%;
     height: 65%;
@@ -104,6 +145,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 14px;
     & img {
         border-radius: 12px;
         border-radius: 17%;

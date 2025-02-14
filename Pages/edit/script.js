@@ -32,3 +32,6 @@ for (var i = 0; i < cardProduct.length; i++) {
     cardProduct[i].addEventListener('hover', branco = () => {
     console.log("menina");
 })}
+
+
+fetch(`https://fakestoreapi.com/products`).then(res => res.json()).then(json => console.log(json) );
