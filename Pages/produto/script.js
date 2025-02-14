@@ -25,6 +25,15 @@ async function carregarProduto() {
 
         boxProduto.innerHTML = paginaProduto(produto);
 
+        const botao = document.createElement('button');
+        botao.id = 'btnCarrinho';
+        botao.innerHTML = 'Comprar';
+        boxProduto.appendChild(botao);
+
+        botao.addEventListener('click', () => {
+            window.location.href = `../Carrinho/carrinho.html?id=${parametros.id}`;
+        });
+
     } catch (error) {
         alert("Erro ao carregar produto:", error);
     }

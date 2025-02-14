@@ -45,6 +45,18 @@ body {
     font-weight: bold;
 }
 
+#btnCarrinho {
+    background: none;
+    border: 2px solid#023b43;
+    color:#023b43;
+    padding: 10px;
+    width: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 2rem;
+}
+
 /* Estilos para telas menores (responsivo) */
 @media (max-width: 768px) {
     #boxProduto-container {
