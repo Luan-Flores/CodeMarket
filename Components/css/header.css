@@ -15,9 +15,10 @@ header {
 
 .header-container {
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
+    height: 55px;
 }
 
 nav, h1 {
@@ -31,5 +32,6 @@ nav, h1 {
         display: flex;
         align-items: center;
         gap: 5px;
+        font-size: 40px;
     }
 }

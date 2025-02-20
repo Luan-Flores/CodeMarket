@@ -2,9 +2,10 @@ import produtoCard from '../../Components/produtoCard.js';
 
 let secProduto = document.getElementById("secProduto");
 
+
 // CATEGORIAS ENDPOINTS: electronics, jewelery, men's clothing, women's clothing
 // ENDPOINT PARA RETORNAR TUDO: products/
-//ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORI
+// ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORIA
 
 
 function carregarProdutos(endpoint) {
@@ -34,4 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
     filtrarButton.addEventListener('click', pegarValor);
 });
 
-carregarProdutos("products/")
+carregarProdutos("products/");

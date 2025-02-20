@@ -8,10 +8,11 @@
     background: url("../../Icons/SetaBaixo.png") no-repeat right 10px center;
     padding-right: 30px;
 }
+
   
 #filtroProdutos:focus {
     outline: none;
-    border-color: #007bff; 
+    border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
   

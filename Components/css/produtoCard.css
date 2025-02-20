@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
+    text-decoration: none;
 }
 .desc{
     position: relative;
@@ -44,12 +45,18 @@
     transform: scale(1.05);
     /* filter: blur(1.5px); */
 }
-
-#secProduto {
+.borda{
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: #D0D5EE;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+}
+#secProduto {
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
     justify-content: center;
-    gap: 15px;
+    gap: 22px;
     margin-top: 100px;
     
 }
