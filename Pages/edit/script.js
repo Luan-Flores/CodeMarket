@@ -3,18 +3,27 @@ let secProduto = document.getElementById("secProduto");
 // CATEGORIAS ENDPOINTS: electronics, jewelery, men's clothing, women's clothing
 // ENDPOINT PARA RETORNAR TUDO: products/
 //ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORI
+
 document.addEventListener('click', function(event) {
     const card = event.target.closest('.main-box');
     if (card) {
+        const titulo = card.querySelector('.nomeProduto');
+
         console.log('ID do card clicado:', card.id);
+        
         fetch(`https://fakestoreapi.com/products/${card.id}`)
         .then(res => res.json())
         .then(json => {
-            console.log(json);
-            console.log(json.id)
+            console.log('json aqdentro ' + json);
+
+            if (titulo) {
+                titulo.contentEditable = true;
+                titulo.focus();
+            }
         });
         }
 });
+
 
 
 function carregarProdutos(endpoint) {
@@ -47,3 +56,7 @@ for (var i = 0; i < cardProduct.length; i++) {
 
 
 fetch(`https://fakestoreapi.com/products`).then(res => res.json()).then(json => console.log(json) );
+
+function editarCard(){
+
+}

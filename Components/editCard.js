@@ -13,7 +13,7 @@ const editCard = (element) => {
                         
                     <div class="desc">
                         <div class="card3">
-                            <p class="nomeProduto">${element.title}</p>
+                            <p class="nomeProduto" id="nomeProduto">${element.title}</p>
                         </div>
                         <div class="card4">
                             <p class="precoProduto">R$ ${element.price}</p>
@@ -24,11 +24,11 @@ const editCard = (element) => {
             <div class="ctaCardProduto">
                 <div href="" class="main-box" id=${element.id}>
                     <img src="../../Icons/LAPIS.png" alt="img" width="34px" height="34px">
-                    <span>Editar</span>
+                    <button class="editar-btn">Editar</button>
                 </div>
                 <a href="./remover" class="del-box" id="remover">
                     <img src="../../Icons/lixo.png" alt="" width="34px" height="34px">
-                    <span>Remover</span>
+                    <button class="remover-btn">Remover</button>
                 </a>
             </div>
         </div>
