@@ -4,26 +4,25 @@ let secProduto = document.getElementById("secProduto");
 // ENDPOINT PARA RETORNAR TUDO: products/
 //ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORI
 
-document.addEventListener('click', function(event) {
-    const card = event.target.closest('.main-box');
-    if (card) {
-        const titulo = card.querySelector('.nomeProduto');
+// document.addEventListener('click', function(event) {
+//     const card = event.target.closest('.main-box');
+//     if (card) {
+//         const titulo = card.querySelector('.nomeProduto');
 
-        console.log('ID do card clicado:', card.id);
+//         console.log('ID do card clicado:', card.id);
         
-        fetch(`https://fakestoreapi.com/products/${card.id}`)
-        .then(res => res.json())
-        .then(json => {
-            console.log('json aqdentro ' + json);
+//         fetch(`https://fakestoreapi.com/products/${card.id}`)
+//         .then(res => res.json())
+//         .then(json => {
+//             console.log('json aqdentro ' + json);
 
-            if (titulo) {
-                titulo.contentEditable = true;
-                titulo.focus();
-            }
-        });
-        }
-});
-
+//             if (titulo) {
+//                 titulo.contentEditable = true;
+//                 titulo.focus();
+//             }
+//         });
+//         }
+// });
 
 
 function carregarProdutos(endpoint) {
@@ -46,17 +45,65 @@ const pegarValor = () => {
     carregarProdutos(`products/category/${valorFiltro}`)
 }
 
+
+    
+    
+    fetch(`https://fakestoreapi.com/products`).then(res => res.json()).then(json => console.log(json) );
+    
+    
+    document.addEventListener('mouseenter', function(event) {
+        const card = event.target.closest('.produto');
+        if (card && !card.classList.contains('editing')) { // Verifica se não está editando
+            console.log('Hover no card:', card);
+            card.classList.add('blur');
+        }
+    }, true);
+    
+    document.addEventListener('mouseleave', function(event) {
+        const card = event.target.closest('.produto');
+        if (card && !card.classList.contains('editing')) { // Só remove o blur se não estiver editando
+            card.classList.remove('blur');
+        }
+    }, true);
+    
+    document.addEventListener('click', function(event) {
+        const card = event.target.closest('.produto');
+        const edit = event.target.closest('.main-box');
+    
+        if (card && edit) {
+            const titulo = card.querySelector('.nomeProduto');
+            const editarBtn = edit.querySelector('.editar-btn');
+    
+            if (editarBtn && event.target === editarBtn) {
+                console.log("Amém");
+                card.classList.remove('blur');
+                card.classList.add('editing'); // Impede o blur ao sair do card
+                titulo.contentEditable = true;
+                titulo.focus();
+            }
+        }
+    });
+    
+    // Para remover o modo de edição quando o usuário der Enter ou clicar fora
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Enter") {
+            const editingCard = document.querySelector('.produto.editing');
+            if (editingCard) {
+                const titulo = editingCard.querySelector('.nomeProduto');
+                titulo.contentEditable = false;
+                editingCard.classList.remove('editing'); // Permite o hover voltar ao normal
+            }
+        }
+    });
+    
+    document.addEventListener('click', function(event) {
+        const editingCard = document.querySelector('.produto.editing');
+        if (editingCard && !editingCard.contains(event.target)) {
+            const titulo = editingCard.querySelector('.nomeProduto');
+            titulo.contentEditable = false;
+            editingCard.classList.remove('editing');
+        }
+    });
+    
+    
 carregarProdutos("products/");
-
-const cardProduct = document.getElementsByClassName('produto');
-for (var i = 0; i < cardProduct.length; i++) {
-    cardProduct[i].addEventListener('hover', branco = () => {
-    console.log("menina");
-})}
-
-
-fetch(`https://fakestoreapi.com/products`).then(res => res.json()).then(json => console.log(json) );
-
-function editarCard(){
-
-}
