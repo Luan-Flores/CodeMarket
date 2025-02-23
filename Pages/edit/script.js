@@ -4,36 +4,40 @@ let secProduto = document.getElementById("secProduto");
 // ENDPOINT PARA RETORNAR TUDO: products/
 //ENDPOINT PARA RETORNAR CATEGORIA ESPECIFICA: products/category/NOMECATEGORI
 
-// document.addEventListener('click', function(event) {
-//     const card = event.target.closest('.main-box');
-//     if (card) {
-//         const titulo = card.querySelector('.nomeProduto');
-
-//         console.log('ID do card clicado:', card.id);
-        
-//         fetch(`https://fakestoreapi.com/products/${card.id}`)
-//         .then(res => res.json())
-//         .then(json => {
-//             console.log('json aqdentro ' + json);
-
-//             if (titulo) {
-//                 titulo.contentEditable = true;
-//                 titulo.focus();
-//             }
-//         });
-//         }
-// });
-
-
 function carregarProdutos(endpoint) {
     fetch(`https://fakestoreapi.com/${endpoint}`)
     .then(res => res.json())
     .then(json => {
         json.forEach(element => {
-            secProduto.innerHTML += editCard(element);
+            armazenar("produtos", element); 
+        });
+
+        let listaProdutos = JSON.parse(localStorage.getItem("produtos")) || []; // Garante que seja um array válido
+        secProduto.innerHTML = ""; // Evita renderizar duplicado na tela
+
+        listaProdutos.forEach(produto => {
+            secProduto.innerHTML += editCard(produto);
         });
     });
 }
+
+function armazenar(item, keyAndvalue) {
+    let storedData = JSON.parse(localStorage.getItem(item)) || [];
+
+    // Verifica se o produto já existe pelo ID
+    const existe = storedData.some(produto => produto.id === keyAndvalue.id);
+
+    if (!existe) {
+        storedData.push(keyAndvalue);
+        localStorage.setItem(item, JSON.stringify(storedData));
+    }
+}
+
+
+function excluir(produto){
+    
+}
+
 
 const pegarValor = () => {
     const filtroProdutos = document.getElementById('filtroProdutos');
@@ -89,6 +93,31 @@ const pegarValor = () => {
             }
         }
     });
+    document.addEventListener('click', function(event) {
+        const card = event.target.closest('.produto'); // Pega o card do produto
+        const del = event.target.closest('.del-box'); // Verifica se o clique foi na área de exclusão
+        
+        if (card && del) {
+            const removerBtn = del.querySelector('.remover-btn');
+            
+            if (removerBtn && event.target === removerBtn) {
+                let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+                const idProduto = card.querySelector('.info-a').id; 
+    
+                // Filtra a lista de produtos removendo o que tem o ID correspondente
+                const novaLista = produtos.filter(produto => produto.id != idProduto);
+    
+                // Atualiza o localStorage com a nova lista
+                localStorage.setItem("produtos", JSON.stringify(novaLista));
+    
+                // Remove o card da tela
+                card.remove();
+    
+                alert("Produto excluído.");
+            }
+        }
+    });
+    
     
     // Para remover o modo de edição quando o usuário der Enter ou clicar fora
     document.addEventListener('keydown', function(event) {
@@ -115,5 +144,20 @@ const pegarValor = () => {
         }
     });
     
+    // function armazenar(id){
+    //     if (carregarProdutos("products/")){
+    //         localStorage.setItem('produtos', JSON.stringify(produtos));
+            
+            
+
+    //     }
+    // }
+    // function removerDosFavoritos(id) {
+    //     favoritos = favoritos.filter(favId => favId !== id);
+    //     localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    //     carregarFavoritos();
+    // }
     
-carregarProdutos("products/");
+
+    carregarProdutos("products/");
+    
