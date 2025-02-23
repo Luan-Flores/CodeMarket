@@ -6,7 +6,7 @@ const editCard = (element) => {
     return `
         <div class="produto">
             <div class="infoProduto">
-                <a href="./produto.html?id=${element.id}" class="info-a" id=${element.id}>
+                <a class="info-a" id=${element.id}>
                     <div class="divImgProd">
                         <img class="imgProduto" src="${element.image}">
                     </div>
@@ -26,7 +26,7 @@ const editCard = (element) => {
                     <img src="../../Icons/LAPIS.png" alt="img" width="34px" height="34px">
                     <button class="editar-btn">Editar</button>
                 </div>
-                <a href="./remover" class="del-box" id="remover">
+                <a class="del-box" id="remover">
                     <img src="../../Icons/lixo.png" alt="" width="34px" height="34px">
                     <button class="remover-btn">Remover</button>
                 </a>

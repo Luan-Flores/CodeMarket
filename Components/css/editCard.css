@@ -58,6 +58,9 @@
             filter: blur(1.5px); 
             
          }
+        & .editar-btn, .remover-btn{
+            background-color: transparent;
+        }
         & .ctaCardProduto{
             height: auto;
             display: flex;
@@ -137,6 +140,16 @@
         /* border-radius: 20px; */
     }
 }
+.editar-btn{
+    background-color: transparent;
+    color:  #19535F;
+    font-weight: bold;
+}
+.remover-btn{
+    background-color: transparent;
+    color:  #19535F;
+    font-weight: bold;
+}
 .del-box:hover, .main-box:hover{
     transform: scale(1.03);
 }
@@ -148,7 +161,6 @@
     justify-content: center;
     gap: 15px;
     margin-top: 100px;
-    
 }
 
 .divImgProd{

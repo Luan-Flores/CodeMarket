@@ -73,13 +73,19 @@ const pegarValor = () => {
         if (card && edit) {
             const titulo = card.querySelector('.nomeProduto');
             const editarBtn = edit.querySelector('.editar-btn');
+            const preco = card.querySelector('.precoProduto');
+            const img = card.querySelector('.imgProduto');
     
             if (editarBtn && event.target === editarBtn) {
                 console.log("Amém");
                 card.classList.remove('blur');
                 card.classList.add('editing'); // Impede o blur ao sair do card
                 titulo.contentEditable = true;
+                preco.contentEditable = true;
+                img.contentEditable = true;
                 titulo.focus();
+                preco.focus();
+                img.focus();
             }
         }
     });
@@ -100,7 +106,11 @@ const pegarValor = () => {
         const editingCard = document.querySelector('.produto.editing');
         if (editingCard && !editingCard.contains(event.target)) {
             const titulo = editingCard.querySelector('.nomeProduto');
+            const preco = editingCard.querySelector('.precoProduto');
+            const img = editingCard.querySelector('.imgProduto');
             titulo.contentEditable = false;
+            preco.contentEditable = false;
+            img.contentEditable = false;
             editingCard.classList.remove('editing');
         }
     });
